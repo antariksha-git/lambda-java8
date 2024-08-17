@@ -1,4 +1,7 @@
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /*
  * 
@@ -15,7 +18,11 @@ public class Question2 {
 		
 		Predicate<Integer> isEven = (num) -> num % 2 == 0;
 		
-		System.out.print(isEven.test(5));
+		List<Integer> lis = Arrays.asList(4, 5, 6, 8, 9);
+		
+		List<Integer> allEven = lis.stream().filter(isEven).collect(Collectors.toList());
+		
+		System.out.println(allEven);
 		
 	}
 
